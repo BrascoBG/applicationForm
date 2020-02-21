@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="myFunction()">
+    <header>
+        <h1>Students application form</h1>
+    </header>
+<table id="contacts-table" class="table table-dark">
+    <tr id="contacts-head">
+        <th>ID</th>
+        <th>Full name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Phone</th>
+        <th>Communication</th>
+        <th>English Level</th>
+        <th>Available to start</th>
+        <th>Skills and Courses</th>
+        <th>Personal Presentation</th>
+        <th>Study from home</th>
+        <th>Actions</th>
+    </tr>
+</table>
+
+<form id="contacts-form" onsubmit="displayAlert()">
+    <div class="item text">
+        <label>Full Name:</label>
+        <div class="field"><input class="form-control" type="text" name="name" required /></div>
+    </div>
+    <div class="item text">
+        <label>Email:</label>
+        <div class="field"><input class="form-control" type="email" name="email" required /></div>
+    </div>
+    <div class="item text">
+        <label>Age:</label>
+        <div class="field"><input class="form-control" type="number" name="age" required /></div>
+    </div>
+    <div class="item text">
+        <label>Phone:</label>
+        <div class="field"><input class="form-control" type="text" name="tel" required /></div>
+    </div>
+    
+    <div id="flex">
+        <div class="item text rowborder">
+            <label>Preferred Way of Communication:</label>
+            <div class="radio">
+                <label for="mail">Email</label>
+                <input  type="radio" name="communication" value="Email" id="mail" required/>
+                <label for="phone">Phone</label>
+                <input  type="radio" name="communication" value="Phone" id="phone" required />
+            </div>
+        </div>
+        <div class="item text rowborder">
+            <label>English Level:</label>
+            <div class="field">
+                <select name="level" required>
+                    <option selected disabled>Choose your level</option>
+                    <option value="B1">B1</option>
+                    <option value="B2">B2</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="item text">
+        <label>Available to start:</label>
+        <div class="field"><input class="form-control" type="date" name="start" required /></div>
+    </div>
+    <div class="item text">
+        <label>Technical Skills and Courses:</label>
+        <div class="field">
+            <textarea class="form-control" name="skills" required ></textarea>
+        </div>
+    </div>
+    <div class="item text">
+        <label>Short Personal Presentation (e.g. reason for joining the program):</label>
+        <div class="field">
+            <textarea class="form-control" rows="5" name="presentation" required ></textarea>
+        </div>
+    </div>
+    <div class="item text flex">
+        <div>
+        <label>"Study from home":</label>
+        <p>(Thick if you want to study remote)</p>
+        </div>
+        <div class="fiel" id="checkflex">
+            <label for="checkyes">Yes</label>
+            <input type="checkbox" class="form-control" name="study" value="No" onclick="myFunction()" id="checkyes" />
+        </div>
+    </div>
+    <div class="button-wrapper">
+        <div class="item button button-default">
+            <div class="field"><input class="btn btn-success" type="submit" id="contacts-op-save" value="Add new applicant" /></div>
+        </div>
+        <div class="item button">
+            <div class="field"><input class="btn btn-danger" type="button" id="contacts-op-discard" value="Discard" /></div>
+        </div>
+    </div>
+    <input type="hidden" name="id_entry" value="0" />
+    <div class="alert alert-success" id="alert" role="alert">
+        Success! Check it out on the top of the page.
+        Good luck!
+    </div>
+</form>
+<footer class="foot">
+    <hr width="100%">
+    <p>Made by &copy; Ivo Krastev</p>
+</footer>
+<script>
+    function myFunction(){
+        let checkBox = document.getElementById("checkyes");
+        if(checkBox.checked == true){
+            document.getElementById("checkyes").value = "Yes";
+        } 
+        if(checkBox.checked == false){
+            document.getElementById("checkyes").value = "No";
+        } 
+    }
+    function displayAlert(){
+        document.getElementById('alert').style.display = "block";
+    }
+</script>
+<script src="app.js"></script>
+
+</body>
+</html>

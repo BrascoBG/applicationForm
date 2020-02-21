@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    margin: 20px;
+}
+h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#contacts-form{
+    width: 40%;
+    margin: 0 auto;
+}
+.radio label{
+    margin-left: 40px;
+}
+#flex{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+.item label{
+    margin-top: 10px;
+}
+.flex{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px;
+}
+.flex label{
+    font-weight: bold;
+    font-size: 20px;
+}
+#checkflex input{
+    font-size: 5px;
+}
+td{
+    font-size: 13px;
+}
+a{
+    cursor: pointer;
+}
+.button-wrapper{
+    display: flex;
+    justify-content: space-around;
+}
+.foot p{
+    text-align: right;
+    margin-right: 20px;
+    color: #FFF;
+    padding-bottom: 15px;
+    margin-bottom: 0px;
+}
+.foot{
+    background: #454d55;
+    margin-top: 40px;
+}
+#alert{
+    display: none;
+    margin-top: 25px;
+}
+.rowborder{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px;
+}
+@media only screen and (max-width: 1000px){
+    #contacts-form{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
